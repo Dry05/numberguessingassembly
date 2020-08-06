@@ -102,26 +102,6 @@ ADRP X1, number@page
 ADD X1, X1, number@pageoff
 LDRB W0, [X1]
 
-
-
-
-//MOV X0, #0
-//ADRP x1, number@page
-//ldrb  w1, [x1]
-//sub w1, w1, 0x30
-
-
-//MOV X0, #1 ; STDOUT
-//ADRP X1, out@page ; Address van yes
-//add x1, x1, out@pageoff
-//strb w0, [x1]
-//MOV X2, #1
-//MOV X16, #4
-//SVC #0x80 ; syscall
-
-
-//ldrb w2, [x0]
-
 cmp x3, x0
 //add w1, w1, 1
 b.eq goodoutput
@@ -129,37 +109,4 @@ b.ne wrongoutput
 
 
 
-//RET
-
-
-
-
-
-
-//mov w15, 0xa
-//MOV X0, #1 ; STDOUT
-//ADRP X1, msg@page ; Address van msg
-//add x1, x1, msg@pageoff
-//ADRP X3, number@page ; Address van number
-//add x3, x3, number@pageoff
-//strb w15, [x1]
-//MOV X2, #20
-//MOV X16, #4
-//SVC #0x80 ; syscall
-
-
-
-
-//add w17, w17, 1
-//ldr   x15, =x4
-//ldrb  x15, [x15]
-
-
-
-
-
-
-
 RET
-
-//.end
